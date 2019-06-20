@@ -1,0 +1,44 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Message component
+/// @group Components
+.message-component {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: border-radius('tiny');
+    margin-top: margin('base');
+    margin-bottom: margin('base');
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    line-height: 1.4;
+    background-color: color('plain-white');
+    padding: padding('base') padding('base') padding('base') padding('extra-large');
+
+    &--info {
+        background-image: url('svg/info.svg');
+        border-color: color('curious-blue');
+        color: color('curious-blue');
+    }
+
+    &--success {
+        background-image: url('svg/success.svg');
+        border-color: color('shamrock');
+        color: color('shamrock');
+    }
+
+    &--warning {
+        background-image: url('svg/warning.svg');
+        border-color: color('buttercup');
+        color: color('buttercup');
+    }
+
+    &--error {
+        background-image: url('svg/error.svg');
+        border-color: color('cinnabar');
+        color: color('cinnabar');
+    }
+}

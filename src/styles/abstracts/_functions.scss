@@ -1,0 +1,32 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+@function font-size($key) {
+    @return map-get($settings-font-sizes, $key);
+}
+
+@function margin($key) {
+    @return map-get($settings-margins, $key);
+}
+
+@function padding($key) {
+    @return map-get($settings-paddings, $key);
+}
+
+@function color($key) {
+    @return map-get($settings-colors, $key);
+}
+
+@function border-radius($key) {
+    @return map-get($settings-border-radius, $key);
+}
+
+@function transition($key) {
+    @return map-get($settings-transitions, $key);
+}
+
+@function breakpoint($key) {
+    @return map-get($settings-breakpoints, $key);
+}

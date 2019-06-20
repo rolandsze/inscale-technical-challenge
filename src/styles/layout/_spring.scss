@@ -1,0 +1,20 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Spring
+/// @group Layout
+.spring {
+    padding-left: padding('small');
+    padding-right: padding('small');
+    margin-left: auto;
+    margin-right: auto;
+
+
+    @each $name, $size in $settings-springs {
+        &--#{$name} {
+            max-width: $size;
+        }
+    }
+}

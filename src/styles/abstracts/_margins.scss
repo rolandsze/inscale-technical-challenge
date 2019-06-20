@@ -1,0 +1,17 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Padding sizes
+/// @group Abstracts
+$settings-margins: (
+    zero: 0,
+    tiny: 0.3125rem,
+    extra-small: 0.625rem,
+    small: 1rem,
+    medium: 1.25rem,
+    base: 1.5625rem,
+    large: 2.5rem,
+    extra-large: 3.3125rem
+);

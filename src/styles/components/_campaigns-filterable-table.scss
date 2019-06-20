@@ -1,0 +1,93 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Campaigns filterable table component
+/// @group Components
+.campaigns-filterable-table-component {
+    margin-top: margin('base');
+    margin-bottom: margin('base');
+
+    &__filter {
+        display: flex;
+        flex-direction: row;
+
+        &__date-pickers {
+            flex: 1 0 auto;
+
+            .react-date-picker {
+                &:not(:last-of-type) {
+                    margin-right: margin('small');
+                }
+            }
+        }
+
+        &__by-name {
+            flex: 0 0 25%;
+
+            input {
+                width: 230px;
+                border-color: color('geyser');
+                background-color: color('plain-white');
+            }
+        }
+    }
+
+    &__counter {
+        font-style: italic;
+        margin-top: margin('base');
+        margin-bottom: margin('base');
+        color: color('oslo-gray');
+    }
+
+    &__table {
+        &__header {
+
+        }
+
+        &__rows {
+
+        }
+    }
+}
+
+@media (max-width: breakpoint('medium')) {
+    .campaigns-filterable-table-component {
+        &__filter {
+            flex-direction: column;
+
+            &__date-pickers {
+                flex: 0 0 100%;
+
+                .react-date-picker {
+                    display: block;
+                    margin-bottom: margin('tiny');
+
+                    &:not(:last-of-type) {
+                        margin-right: margin('zero');
+                    }
+                }
+            }
+
+            &__by-name {
+                flex: 0 0 100%;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .campaigns-filterable-table-component {
+        &__table {
+            &__header,
+            &__rows {
+                width: 600px;
+            }
+        }
+    }
+}

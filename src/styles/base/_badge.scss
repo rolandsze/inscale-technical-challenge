@@ -1,0 +1,22 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Badge
+/// @group Base
+.badge {
+    display: inline-block;
+    padding: padding('extra-tiny') padding('extra-small');
+    border-radius: border-radius('base');
+    color: color('plain-white');
+    font-size: font-size('small');
+
+    &--active {
+        background-color: color('shamrock');
+    }
+
+    &--inactive {
+        background-color: color('cinnabar');
+    }
+}

@@ -1,0 +1,98 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Header
+/// @group Layout
+$logo-size: 38px;
+$logo-size-on-small: 24px;
+
+.header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: padding('tiny') padding('zero');
+    box-shadow: 0 1px 12px color('light-box-shadow');
+    background-color: color('plain-white');
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__logo {
+        flex: 0 0 $logo-size;
+
+        img {
+            height: $logo-size;
+        }
+    }
+
+    &__navigation {
+        flex: 1 0 auto;
+        margin: margin('zero') margin('large');
+    }
+
+    &__language-switcher {
+        flex: 0 0 auto;
+
+        ul {
+            li {
+                span {
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__navigation,
+    &__language-switcher {
+        ul {
+            list-style: none;
+            display: flex;
+            margin: margin('zero');
+            padding: padding('zero');
+
+            li {
+                &:not(:last-of-type) {
+                    margin-right: margin('small');
+                }
+
+                span,
+                a {
+                    text-decoration: none;
+                    transition: transition('header-links');
+                    color: color('plain-black');
+
+                    &:hover,
+                    &.active {
+                        color: color('havelock-blue');
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: breakpoint('small')) {
+    .header {
+        font-size: font-size('medium');
+
+        &__logo {
+            flex: 0 0 $logo-size-on-small;
+
+            img {
+                height: $logo-size-on-small;
+            }
+        }
+
+        &__navigation {
+            margin: margin('zero') margin('small');
+        }
+    }
+}

@@ -1,0 +1,58 @@
+/*!
+ * Created by Roland Szecsenyi <roland.sze@gmail.com>
+ * This file is part of the INSCALE technical challenge.
+ */
+
+/// Table
+/// @group Layout
+.table {
+    &__head {
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: margin('extra-small');
+    }
+
+    &__body {
+
+    }
+
+    &__row {
+        background-color: color('plain-white');
+        border-radius: border-radius('tiny');
+        box-shadow: 0 1px 5px color('light-box-shadow');
+        transition: transition('table-row');
+
+        &:hover {
+            box-shadow: 0 3px 10px color('box-shadow');
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: margin('extra-small');
+        }
+    }
+
+    &__head,
+    &__row {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    &__cell {
+        padding: padding('small');
+
+        &--5 {
+            flex: 0 1 20%;
+        }
+    }
+}
+
+@media (max-width: breakpoint('medium')) {
+    .table {
+        &__body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    }
+}
