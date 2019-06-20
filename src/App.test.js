@@ -25,7 +25,6 @@ import CampaignsContainer from 'containers/Campaigns';
  * @description
  * Simple component smoke test.
  */
-
 const smokeTest = (children) => {
     const div = document.createElement('div');
     ReactDOM.render(children, div);
@@ -90,12 +89,13 @@ describe('Components', () => {
 
         const div = document.createElement('div');
 
-        ReactDOM.render(
+        smokeTest(
             <Provider store={reduxStore}>
                 <I18nextProvider i18n={i18n}>
                     <CampaignsFilterableTableComponent campaigns={campaigns}/>
                 </I18nextProvider>
-            </Provider>, div);
+            </Provider>
+        );
         ReactDOM.unmountComponentAtNode(div);
     });
 });
