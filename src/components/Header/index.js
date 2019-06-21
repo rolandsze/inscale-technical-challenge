@@ -4,10 +4,9 @@
  */
 
 import React from 'react';
-import {compose} from 'redux';
 import i18n from 'i18next';
 import {withTranslation} from 'react-i18next';
-import {withRouter, Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {routesConfig} from 'config/routes';
 import logo from 'svg/logo.svg';
 
@@ -45,21 +44,6 @@ const renderLanguageSwitcher = (t) => {
 
 /**
  * @description
- * Get navigation link class.
- *
- * Return active class if the route equals the currentLocation.
- * Returns an empty string if the route does not equal to the currentLocation.
- *
- * @param {string} route Route to compare
- * @param {string} currentLocation Current browser's location
- * @returns {string}
- */
-const getNavigationLinkClass = (route, currentLocation) => {
-    return (route === currentLocation) ? 'active' : '';
-};
-
-/**
- * @description
  * Header component.
  *
  * Render the header component.
@@ -71,7 +55,6 @@ const getNavigationLinkClass = (route, currentLocation) => {
  */
 const HeaderComponent = (props) => {
     const {t} = props;
-    const pathname = props.location.pathname;
 
     return (
         <header className='header'>
@@ -90,16 +73,14 @@ const HeaderComponent = (props) => {
                     <nav className='header__navigation'>
                         <ul>
                             <li>
-                                <Link to={routesConfig.index}
-                                      className={getNavigationLinkClass(routesConfig.index, pathname)}>
+                                <NavLink exact to={routesConfig.index} activeClassName='active'>
                                     {t('index')}
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to={routesConfig.campaigns}
-                                      className={getNavigationLinkClass(routesConfig.campaigns, pathname)}>
+                                <NavLink exact to={routesConfig.campaigns} activeClassName='active'>
                                     {t('campaigns')}
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -112,7 +93,4 @@ const HeaderComponent = (props) => {
     );
 };
 
-export default compose(
-    withTranslation(),
-    withRouter
-)(HeaderComponent);
+export default withTranslation()(HeaderComponent);
