@@ -42,8 +42,19 @@ npm run build
 ```
 Builds the app for production to the `build` folder.
 
-## Test data
-### Valid
+## Adding campaigns
+Adding campaigns can only be invoked from the _Campaigns_ page.
+
+### Expected shape of campaign object
+```
+id: Number
+name: String
+startDate: String that match the expected input date format DD/MM/YYYY
+endDate: String that match the expected input date format DD/MM/YYYY
+budget: Positive number
+```
+
+### Valid data
 Add total of 10 campaigns. 1 campaign is hidden because the end date is before the start date.
 ```javascript
 window.AddCampaigns([
@@ -60,8 +71,8 @@ window.AddCampaigns([
 ]);
 ```
 
-### Invalid
-The below test data is a negative budget.
+### Invalid data
+Add one campaign, but the budget is a negative number.
 ```javascript
 window.AddCampaigns([
     {"id": 1,"name": "alma","startDate": "9/10/2018","endDate": "3/9/2019","budget": -8837743}
