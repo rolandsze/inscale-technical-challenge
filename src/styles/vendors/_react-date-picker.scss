@@ -10,4 +10,9 @@
         height: 32px;
         padding-left: padding('small');
     }
+
+    button,
+    input {
+        outline: none;
+    }
 }
