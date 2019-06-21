@@ -58,8 +58,8 @@ class CampaignsComponent extends Component {
             <div className='campaigns-component'>
                 {this.renderNoDataAddedYetMessage()}
                 {this.renderInvalidFormatMessage()}
-                {this.renderCampaignsFilterableTableComponent()}
                 {this.renderSpinner()}
+                {this.renderCampaignsFilterableTableComponent()}
             </div>
         );
     }
