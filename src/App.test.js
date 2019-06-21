@@ -87,8 +87,6 @@ describe('Components', () => {
             'budget': 8837743
         }];
 
-        const div = document.createElement('div');
-
         smokeTest(
             <Provider store={reduxStore}>
                 <I18nextProvider i18n={i18n}>
@@ -96,7 +94,6 @@ describe('Components', () => {
                 </I18nextProvider>
             </Provider>
         );
-        ReactDOM.unmountComponentAtNode(div);
     });
 });
 
